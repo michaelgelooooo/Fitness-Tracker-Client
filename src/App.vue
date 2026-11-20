@@ -7,14 +7,16 @@ import Footer from "./components/Footer.vue";
 const { getUserDetails } = useGlobalStore();
 
 onBeforeMount(async () => {
-    await getUserDetails(localStorage.getItem("token"));
+	await getUserDetails(localStorage.getItem("token"));
 });
 </script>
 
 <template>
 	<Navbar />
-	<div id="main-container" :class="$route.path === '/' ? 'container-fluid px-0' : 'container'">
+
+	<div id="main-container" class="bg-light">
 		<router-view />
 	</div>
+
 	<Footer />
 </template>
