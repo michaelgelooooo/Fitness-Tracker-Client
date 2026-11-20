@@ -25,6 +25,18 @@ async function getMyWorkouts() {
 	}
 }
 
+function removeWorkout(workoutId) {
+	workouts.value = workouts.value.filter((workout) => workout._id !== workoutId);
+}
+
+function markWorkoutCompleted(workoutId) {
+	const workout = workouts.value.find((workout) => workout._id === workoutId);
+
+	if (workout) {
+		workout.status = "completed";
+	}
+}
+
 onBeforeMount(() => {
 	getMyWorkouts();
 });
@@ -52,7 +64,7 @@ onBeforeMount(() => {
 
 			<div v-else-if="workouts.length > 0" class="row g-4">
 				<div class="col-md-6 col-lg-4" v-for="workout in workouts" :key="workout._id">
-					<WorkoutCard :workoutData="workout" />
+					<WorkoutCard :workoutData="workout" @deleted="removeWorkout" @completed="markWorkoutCompleted" />
 				</div>
 			</div>
 

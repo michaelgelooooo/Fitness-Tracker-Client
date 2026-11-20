@@ -14,6 +14,7 @@ import Login from "./pages/Login.vue";
 import Logout from "./pages/Logout.vue";
 import Workouts from './pages/Workouts.vue';
 import AddWorkout from './pages/AddWorkout.vue';
+import EditWorkout from './pages/EditWorkout.vue';
 import ErrorPage from "./pages/ErrorPage.vue";
 
 const router = createRouter({
@@ -45,9 +46,14 @@ const router = createRouter({
             component: Workouts,
         },
         {
-            path: "/workouts/addWorkouts",
+            path: "/workouts/addWorkout",
             name: "Add Workout",
             component: AddWorkout,
+        },
+        {
+            path: "/workouts/editWorkout/:id",
+            name: "Edit Workout",
+            component: EditWorkout,
         },
         {
             path: "/:pathMatch(.*)*",
