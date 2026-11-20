@@ -1,8 +1,8 @@
 {
-    "url": "",
-    "endpoints": {
-        "register": "/register",
-        "login": "/login",
-        "workouts": "/workouts"
-    }
+	"url": "https://ochengco-b645-fitness-tracker.vercel.app/",
+	"endpoints": {
+		"register": "/register",
+		"login": "/login",
+		"workouts": "/workouts"
+	}
 }
